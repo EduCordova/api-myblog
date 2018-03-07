@@ -6,10 +6,9 @@ const api = express.Router()
 
 
 api.get('/mypost',PostCtrl.getMyposts)
+api.post('/mypost',PostCtrl.saveMypost)
 api.get('/',(req,res)=>{
-    res.json({
-        pesponse:'runing'
-    })
+    res.send("api rest  mongodb + express")
 })
 
 module.exports = api
