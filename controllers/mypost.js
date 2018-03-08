@@ -79,10 +79,11 @@ function getOnepost(req, res) {
     // })
 
     Mypost.find().where("_id", postId).exec(function(err,mypost){
+       
         if(err){
             return res.status(500).send({ message: 'Error al realizar la peticion' })
-        } else if(mypost={ }) {
-                 res.status(404).send({ message: 'el producto no existe' }) 
+        } else if(mypost.length == 0) {
+                   res.status(404).send({ message: 'el producto no existe' }) 
         }else{
            return  res.status(200).send({ mypost })
         }
