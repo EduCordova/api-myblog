@@ -9,6 +9,7 @@ const MypostSchema = Schema({
     description:String,
     content:String,
     img:String
+    
 
 })
 

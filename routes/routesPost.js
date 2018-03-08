@@ -7,8 +7,13 @@ const api = express.Router()
 
 api.get('/mypost',PostCtrl.getMyposts)
 api.post('/mypost',PostCtrl.saveMypost)
+api.get('/mypost/:postId',PostCtrl.getOnepost)
+api.put('/mypost/:postId',PostCtrl.updatePost)
+api.delete('/mypost/:postId',PostCtrl.deletePost)
+
+
 api.get('/',(req,res)=>{
-    res.send("api rest  mongodb + express")
+    res.send("api rest  mongodb + express demo")
 })
 
 module.exports = api
