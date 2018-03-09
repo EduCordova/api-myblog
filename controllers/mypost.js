@@ -4,13 +4,14 @@ const Mypost = require('../models/mypost')
 //Mostrar todas las publicaciones
 function getMyposts(req, res) {
 
-    Mypost.find({}, (err, mypost) => {
+    Mypost.find((err, myposto)=> {
         if (err) {
             return res.status(500).send({ menssage: 'error al realizar la peticion' })
-        } else if (!mypost) {
+        } else if (myposto.length==0) {
             return res.status(404).send({ menssage: 'No se encontro nada' })
         } else {
-            res.status(200).send({ mypost })
+             res.status(200).send( res.json(myposto) )
+           
         }
     })
 }
