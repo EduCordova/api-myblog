@@ -86,7 +86,7 @@ function getOnepost(req, res) {
         } else if (mypost.length == 0) {
             res.status(404).send({ message: 'el producto no existe' })
         } else {
-            return res.status(200).send({ mypost })
+            res.json(mypost)
         }
     })
 
