@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 const app = require('./app')
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3100
 
 mongoose.connect('mongodb://adminapi:123456@ds161148.mlab.com:61148/mypost',(err,res)=>{
     if(err){
