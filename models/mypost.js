@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const MypostSchema = Schema({
     _id:Schema.Types.Mixed,
     title:String,
+    autor:String,
     date:String,
     description:String,
     content:String,

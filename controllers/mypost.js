@@ -38,7 +38,15 @@ function saveMypost(req, res) {
         return newId
     }
 
-    var nuevId = convert(pre_id)
+    function getmyDate(){
+        const meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+        let f  = new Date()
+        let fecha =  meses[f.getMonth()]+" "+(f.getDate().toString())+","+(f.getFullYear().toString())
+        return fecha
+    }
+
+    let nuevId = convert(pre_id)
+    let fechaActual = getmyDate()
     //instanciamos
 
 
@@ -46,7 +54,8 @@ function saveMypost(req, res) {
     let mypost = new Mypost()
     mypost._id = nuevId
     mypost.title = req.body.title
-    mypost.date = req.body.date
+    mypost.autor = req.body.autor
+    mypost.date = fechaActual
     mypost.description = req.body.description
     mypost.content = req.body.content
     mypost.img = req.body.img
